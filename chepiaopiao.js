@@ -3,7 +3,7 @@
 车票票：https://apps.apple.com/app/id6446212291
 
 [rewrite_local]
-^https?:\/\/api\.rc-backup\.com\/v1\/(subscribers\/[^\/]+$|receipts$) url script-response-body https://raw.githubusercontent.com/chenchenfang/Script/main/chepiaopiao.js
+^https?:\/\/api\.rc-backup\.com\/v1\/(subscribers\/[^\/]+$|offerings$) url script-response-body https://raw.githubusercontent.com/chenchenfang/Script/main/chepiaopiao.js
 
 [MITM]
 hostname = api.rc-backup.com
