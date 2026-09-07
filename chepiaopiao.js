@@ -2,27 +2,11 @@
 
 车票票：https://apps.apple.com/app/id6446212291
 
-[rewrite_local]
-^https?:\/\/api\.rc-backup\.com\/v1\/(subscribers\/[^\/]+$|offerings$) url script-response-body https://raw.githubusercontent.com/chenchenfang/Script/main/chepiaopiao.js
+[URL Rewrite]
+^https:\/\/(api\.revenuecat\.com|api\.rc-backup\.com)\/.+\/(receipts$|subscribers\/[^/]+$) https://rc-backup.lovebabyforever.workers.dev header
+^https:\/\/(api\.revenuecat\.com|api\.rc-backup\.com)\/.+\/(receipts$|subscribers\/[^/]+$) https://reven.lovebabyforever.workers.dev header
 
 [MITM]
-hostname = api.rc-backup.com
+hostname = api.revenuecat.com, api.rc-backup.com
 
 */
-var guding = JSON.parse($response.body);
-guding.subscriber.entitlements = {
-  "vip": {
-    "expires_date": null,
-    "product_identifier": "eticket_6_life",
-    "purchase_date": "2023-03-13T03:33:33Z"
-  }
-};
-guding.subscriber.original_purchase_date = "2023-03-13T03:33:33Z";
-guding.subscriber.subscriptions = {
-  "eticket_6_life": {
-    "expires_date": null,
-    "original_purchase_date": "2023-03-13T03:33:33Z",
-    "purchase_date": "2023-03-13T03:33:33Z"
-  }
-};
-$done({ body: JSON.stringify(guding) });
