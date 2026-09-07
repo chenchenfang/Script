@@ -3,10 +3,10 @@
 车票票：https://apps.apple.com/app/id6446212291
 
 [rewrite_local]
-^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$) url script-response-body https://raw.githubusercontent.com/Guding88/Script/main/chepiaopiao.js
+^https?:\/\/api\.rc-backup\.com\/v1\/(subscribers\/[^\/]+$|receipts$) url script-response-body https://raw.githubusercontent.com/chenchenfang/Script/main/chepiaopiao.js
 
 [MITM]
-hostname = api.revenuecat.com
+hostname = api.rc-backup.com
 
 */
 var guding = JSON.parse($response.body);
